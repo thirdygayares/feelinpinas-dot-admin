@@ -35,7 +35,6 @@ const styles = {
     backgroundColor: {
         backgroundColor: "#F5F1FC",
     }
-
 }
 
 export function SidebarCity() {
@@ -74,6 +73,10 @@ export function SidebarCity() {
 
                                             <li>
                                                 <Link to="/dashboardcity/restaurant" className='text-dark'>Restaurant</Link>
+                                            </li>
+
+                                            <li>
+                                                <Link to="/dashboardcity/addplaces" className='text-dark'>Add Places</Link>
                                             </li>
 
                                         </ul>

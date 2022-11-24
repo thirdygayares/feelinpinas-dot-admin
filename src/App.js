@@ -1,4 +1,4 @@
-import { Route, Routes, Link } from 'react-router-dom'
+import { Route, Routes } from 'react-router-dom'
 import './App.css'
 import React from 'react'
 
@@ -11,14 +11,23 @@ import {Hotel} from "./components/city-admin/Hotel"
 import {PlacesCity} from "./components/city-admin/PlacesCity"
 import {Restaurant} from "./components/city-admin/Restaurant"
 import {SidebarCity} from "./components/city-admin/SidebarCity"
+import { AddPlaces } from './components/city-admin/AddPlaces'
 
 
 
 // dot admin
 import {City} from "./components/dot-admin/City"
+
 import {DashboardDot} from "./components/dot-admin/DashboardDot"
 import {SideBarDot} from "./components/dot-admin/SidebarDot"
 import {Users} from "./components/dot-admin/Users"
+import {Places} from "./components/dot-admin/Places"
+import { AddLocalAreas } from './components/dot-admin/AddLocalAreas'
+
+
+// Not Found
+import {NotFound} from "./components/NotFound"
+
 
 
 
@@ -47,16 +56,21 @@ function App() {
       <Route path="places" element={< PlacesCity  />} />
       <Route path="hotel" element={<Hotel />} />
       <Route path="restaurant" element={< Restaurant  />} />
+      <Route path="addplaces" element={< AddPlaces  />} />
 
       </Route>
 
-      <Route path="*" element={<Restaurant/>}/>
+      <Route path="/dashboarddot" element={<SideBarDot/>}>
+      <Route index element={<DashboardDot />} />
+      <Route path="localarea" element={< City  />} />
+      <Route path="users" element={< Users  />} />
+      <Route path="places" element={< Places  />} />
+      <Route path="addlocal" element={< AddLocalAreas  />} />
 
+      </Route>
+
+      <Route path="*" element={<NotFound/>}/>
     </Routes>
-
-
- 
-
 
     </>
   )
